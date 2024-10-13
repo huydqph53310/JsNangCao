@@ -1,0 +1,96 @@
+{
+  "Productnew": [
+    {
+      "name": "Giầy Đỏ",
+      "imgae": "/fontend/asset/img/giaytrang.png",
+      "price": "300000",
+      "description": "giày trắng mạnh mẽ đẹp đẽ",
+      "brand": "adidas",
+      "new": 1,
+      "buycount": 1,
+      "id": 5
+    },
+    {
+      "name": "Bảo Hiểm",
+      "imgae": "/fontend/asset/img/baohiem.png",
+      "price": "30000000",
+      "description": "o",
+      "brand": "Bảo hiểm nè",
+      "id": 6
+    },
+    {
+      "name": "Giày đỏ",
+      "imgae": "/fontend/asset/img/giaydo.png",
+      "price": "280000",
+      "description": "Được thiết kế với màu xanh lá cây tươi mát, giày thể thao này không chỉ nổi bật mà còn rất dễ phối với trang phục. Chất liệu thoáng khí giúp đôi chân bạn luôn khô ráo, lý tưởng cho những ngày hè oi ả.\"",
+      "brand": "adidas",
+      "new": 1,
+      "buycount": 1,
+      "id": 7
+    },
+    {
+      "name": "Giày Vàng",
+      "imgae": "/fontend/asset/img/giayvang.png",
+      "price": "500000",
+      "description": "Giày bóng rổ xanh dương không chỉ thu hút ánh nhìn mà còn mang lại hiệu suất tối ưu trên sân. Với công nghệ đệm êm ái và độ bám tốt, bạn có thể tự tin thể hiện những cú nhảy đẹp mắt.\"",
+      "brand": "adidas",
+      "new": 1,
+      "buycount": 1,
+      "id": 8
+    },
+    {
+      "name": "Giầy Xanh Lá Cây",
+      "imgae": "/fontend/asset/img/giayxanhla.png",
+      "price": "400000",
+      "description": "Được thiết kế với màu xanh lá cây tươi mát, giày thể thao này không chỉ nổi bật mà còn rất dễ phối với trang phục. Chất liệu thoáng khí giúp đôi chân bạn luôn khô ráo, lý tưởng cho những ngày hè oi ả.\"",
+      "brand": "adidas",
+      "new": 1,
+      "buycount": 1,
+      "id": 9
+    },
+    {
+      "name": "Giầy Xanh Da Trời",
+      "imgae": "/fontend/asset/img/giayxanh.png",
+      "price": "300000",
+      "description": "Giày bóng rổ xanh dương không chỉ thu hút ánh nhìn mà còn mang lại hiệu suất tối ưu trên sân. Với công nghệ đệm êm ái và độ bám tốt, bạn có thể tự tin thể hiện những cú nhảy đẹp mắt.\"",
+      "brand": "adidas",
+      "new": 1,
+      "buycount": 1,
+      "id": 10
+    },
+    {
+      "name": "Giầy Đen ",
+      "imgae": "/fontend/asset/img/giayden.png",
+      "price": "400000",
+      "description": "Được thiết kế với màu đen tươi mát, giày thể thao này không chỉ nổi bật mà còn rất dễ phối với trang phục. Chất liệu thoáng khí giúp đôi chân bạn luôn khô ráo, lý tưởng cho những ngày hè oi ả.\"",
+      "brand": "adidas",
+      "id": 11
+    },
+    {
+      "name": "Giầy Kiên Cường",
+      "imgae": "/fontend/asset/img/giaykc.png",
+      "price": "000900",
+      "description": "+90 Giáp phép  +60 Tốc chạy – Nội tại duy nhất: Gia tốc  +35% Kháng hiệu ứng – Nội tại duy nhất (kháng hiệu ứng là giảm thời gian chịu các loại khống chế)  Hoán đổi miễn phí với các giày cấp II, hồi chiêu 3 phút",
+      "brand": "Bình Nguyên Vô Tận",
+      "new": 1,
+      "buycount": 1,
+      "id": 12
+    }
+  ],
+  "users": [
+    {
+      "email": "huy02112004@gmail.com",
+      "password": "$2a$10$a/mySItjdSn0VzwLrm/iGuqT0cjgHiky0P5A4dE9B40/mUJiV3jOO",
+      "name": "Đỗ Quốc Huy",
+      "role": "user",
+      "id": 1
+    },
+    {
+      "name": "Nguyễn Quốc Anh",
+      "email": "Admin.runsytem.mod@huydev.id.vn",
+      "password": "$2a$10$eQ9gYwkf.XF6YsqW1bqO9.5q7QMJH7Zdm08QO3vu7OzeED6fuOS3q",
+      "role": "user",
+      "id": 2
+    }
+  ]
+}

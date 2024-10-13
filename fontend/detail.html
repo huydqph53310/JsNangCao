@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="css/styles.css" rel="stylesheet" />
+
+</head>
+<style>
+    img {
+        width: 100%;
+        height: 450px;
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="/fontend/index.html">Start Bootstrap</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page"
+                            href="/fontend/index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/fontend/Abount.html">About</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Account</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#!">Loggin</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li><a class="dropdown-item" href="/fontend/Regsiter.html">Regsiter</a></li>
+                            <li><a class="dropdown-item" href="/fontend/admin/ProductManager.html">AdminManager</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <button class="btn btn-outline-dark" type="submit">
+                        <i class="bi-cart-fill me-1"></i>
+                        Cart
+                        <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="" alt="Tên sản phẩm" class="product-image" id="imgae">
+            </div>
+            <div class="col-md-6">
+                <h2 id="name">Tên sản phẩm</h2>
+                <p class="text-danger h4">Giá: <span id="price">1,200,000 VNĐ</span></p>
+                <p id="description">Mô tả: <br>
+                    Đây là một đôi giày thể thao cao cấp, thiết kế hiện đại và thoải mái cho đôi chân. Chất liệu cao cấp
+                    giúp bền bỉ theo thời gian.</p>
+                <h5>Thông số kỹ thuật:</h5>
+                <ul>
+                    <li id="brand">Thương hiệu: XYZ</li>
+                    <li id="size">Kích thước: 39, 40, 41, 42</li>
+                    <li id="color">Màu sắc: Xanh, Đỏ</li>
+                    <li id="o">Chất liệu: Da tổng hợp</li>
+                </ul>
+                <button class="btn btn-primary btn-lg">Thêm vào giỏ hàng</button>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="reviews">
+            <h4>Đánh giá sản phẩm</h4>
+            <div class="review-item">
+                <h6>Người dùng 1</h6>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>Rất thoải mái, tôi rất thích sản phẩm này!</p>
+            </div>
+            <div class="review-item">
+                <h6>Người dùng 2</h6>
+                <p>⭐⭐⭐⭐</p>
+                <p>Chất lượng tốt nhưng giá hơi cao.</p>
+            </div>
+            <div class="review-item">
+                <h6>Người dùng 3</h6>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>Thiết kế đẹp, chắc chắn sẽ mua thêm.</p>
+            </div>
+            <hr>
+            <h5>Viết đánh giá của bạn</h5>
+            <form>
+                <div class="form-group">
+                    <label for="user-name">Tên của bạn</label>
+                    <input type="text" class="form-control" id="user-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="user-review">Đánh giá của bạn</label>
+                    <textarea class="form-control" id="user-review" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Gửi đánh giá</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p>
+        </div>
+    </footer>
+
+    <script>
+        const param = new URLSearchParams(location.search)
+        const idProduct = param.get('id')
+        const name = document.getElementById('name')
+        const imgae = document.getElementById('imgae')
+        const price = document.getElementById('price')
+        const description = document.getElementById('description')
+        const brand = document.getElementById('brand')
+        const Getdata = async (id) => {
+            const response = await fetch(`http://localhost:3000/Productnew/${id}`)
+            const listProduct = await response.json();
+            console.log(response);
+            if (response.ok) {
+                console.log(listProduct)
+                name.innerHTML = listProduct.name
+                imgae.src = listProduct.imgae
+                price.innerHTML = listProduct.price + "VND"
+                description.innerHTML = listProduct.description
+                brand.innerHTML = "Thương hiệu: " + listProduct.brand
+            }
+        }
+
+        Getdata(idProduct)
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

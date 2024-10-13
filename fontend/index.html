@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Shop Homepage - Start Bootstrap Template</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<style>
+    img {
+        width: 300px;
+        height: 200px;
+    }
+
+    .abc {
+        margin-left: 20px;
+    }
+</style>
+
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="/fontend/index.html">Start Bootstrap</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page"
+                            href="/fontend/index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/fontend/Abount.html">About</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Account</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/fontend/Login.htm">Loggin</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li><a class="dropdown-item" href="/fontend/Regsiter.html">Regsiter</a></li>
+                            <li><a class="dropdown-item" href="/fontend/admin/ProductManager.html">AdminManager</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <button class="btn btn-outline-dark">
+                        <a href="/fontend/ProductCard.html" style="text-decoration: none; color: black;"> <i
+                                class="bi-cart-fill me-1"></i>
+                            Cart
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span></a>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- Header-->
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">Shop in style</h1>
+                <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+            </div>
+        </div>
+    </header>
+    <!-- Section-->
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" id="show">
+                <!-- đã call dữ liệu để đổ vào đây -->
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- Footer-->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p>
+        </div>
+    </footer>
+    <script>
+        const showlist = document.getElementById('show')
+        const Getdata = async () => {
+            try {
+                const product = await fetch('http://localhost:3000/Productnew')
+                const list = await product.json()
+                if (product.ok) {
+                    console.log(list)
+
+                    list.forEach((productlist, index) => {
+                        // dữ liệu được thực hiện theo template mẫu not copy and use chatGPT
+                        const div1 = document.createElement('div')
+                        div1.classList.add('col');
+                        div1.classList.add('mb-5')
+                        showlist.append(div1)
+                        // div 1
+                        const div2 = document.createElement('div')
+                        div2.classList.add('card');
+                        div2.classList.add('h-100')
+                        div1.append(div2)
+                        // div2
+                        const div3 = document.createElement('div')
+                        div3.classList.add('badge')
+                        div3.classList.add('bg-dark')
+                        div3.classList.add('text-white')
+                        div3.classList.add('position-absolute')
+                        div3.style = "top: 0.5rem; right: 0.5rem"
+                        div3.innerHTML = "sale"
+                        div2.append(div3)
+                        // div3 sale
+                        // img là dòng 3
+                        const img = document.createElement('img')
+                        img.classList.add('card-img-top')
+                        img.src = `${productlist.imgae}`
+                        div2.append(img)
+                        // div4 
+                        const div4 = document.createElement('div')
+                        div4.classList.add('card-body');
+                        div4.classList.add('b-4')
+                        div2.append(div4)
+                        // div 5
+                        const div5 = document.createElement('div')
+                        div5.classList.add('text-center');
+                        div4.append(div5)
+                        // h5
+                        const h5 = document.createElement('h5')
+                        h5.classList.add('fw-bolder')
+                        h5.innerHTML = `${productlist.name}`
+                        div5.append(h5)
+                        // div 6 start
+                        const div6 = document.createElement('div')
+                        div6.classList.add('d-flex');
+                        div6.classList.add('justify-content-center');
+                        div6.classList.add('small');
+                        div6.classList.add('text-warning');
+                        div6.classList.add('mb-2');
+                        div5.append(div6)
+                        // 5 start
+                        const start1 = document.createElement('div')
+                        start1.classList.add('bi-star-fill')
+                        div6.append(start1)
+
+                        const start2 = document.createElement('div')
+                        start2.classList.add('bi-star-fill')
+                        div6.append(start2)
+
+                        const start3 = document.createElement('div')
+                        start3.classList.add('bi-star-fill')
+                        div6.append(start3)
+
+                        const start4 = document.createElement('div')
+                        start4.classList.add('bi-star-half')
+                        div6.append(start4)
+
+                        const start5 = document.createElement('div')
+                        start5.classList.add('bi-star')
+                        div6.append(start5)
+
+                        // span - price product
+
+                        const span = document.createElement('span')
+                        span.classList.add('text-muted')
+                        span.classList.add('text-decoration-line-through')
+                        span.innerHTML = '$' + `${Number(productlist.price) + Number(10000)}` + " "
+                        div5.append(span)
+                        const span2 = document.createElement('span')
+                        span2.innerHTML = '$' + `${Number(productlist.price)}`
+                        div5.append(span2)
+
+                        // div 7 peraent  add to card
+
+
+                        const div7 = document.createElement('div')
+                        div7.classList.add('card-footer');
+                        div7.classList.add('p-4');
+                        div7.classList.add('pt-0');
+                        div7.classList.add('border-top-0');
+                        div7.classList.add('bg-transparent');
+                        div2.append(div7)
+
+                        // div8 addtocarđ
+
+                        const div8 = document.createElement('div')
+                        div8.classList.add('text-center');
+                        div7.append(div8)
+
+                        // a link đến api add product sản phẩm
+
+                        const a = document.createElement('a')
+                        a.classList.add('btn');
+                        a.classList.add('btn-outline-dark');
+                        a.classList.add('mt-auto');
+                        a.classList.add('abc');
+                        a.href = '#'
+                        a.innerHTML = "Add to card"
+                        div8.append(a)
+
+                        const a1 = document.createElement('a')
+                        a1.classList.add('btn');
+                        a1.classList.add('abc');
+                        a1.classList.add('btn-outline-dark');
+                        a1.classList.add('mt-auto');
+                        a1.href = `/fontend/detail.html?id=${productlist.id}`
+                        a1.innerHTML = "Detail"
+                        div8.append(a1)
+                    })
+                }
+            } catch (error) {
+                alert(error)
+            }
+        }
+        Getdata();
+    </script>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
