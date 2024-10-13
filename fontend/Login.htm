@@ -54,10 +54,11 @@
                     </li>
                 </ul>
                 <form class="d-flex">
-                    <button class="btn btn-outline-dark" type="submit">
-                        <i class="bi-cart-fill me-1"></i>
-                        Cart
-                        <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                    <button class="btn btn-outline-dark">
+                        <a href="/fontend/ProductCard.html" style="text-decoration: none; color: black;"> <i
+                                class="bi-cart-fill me-1"></i>
+                            Cart
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span></a>
                     </button>
                 </form>
             </div>
@@ -105,7 +106,7 @@
                     if (response.ok) {
                         const user = await response.json()
                         const token = user.accessToken
-                        localStorage.setItem('userlogin', token)
+                        localStorage.setItem('user', JSON.stringify(user))
                         alert('đăng nhập thành công')
                         console.log(user);
                     }

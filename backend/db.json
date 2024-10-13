@@ -88,9 +88,16 @@
     {
       "name": "Nguyễn Quốc Anh",
       "email": "Admin.runsytem.mod@huydev.id.vn",
-      "password": "$2a$10$eQ9gYwkf.XF6YsqW1bqO9.5q7QMJH7Zdm08QO3vu7OzeED6fuOS3q",
-      "role": "user",
+      "password": "$2a$10$7uM8ToXxn511d5luO1NGD.Po4tSinmfJ1zYpPTwhq9jJDPfyYSaMO",
+      "role": "admin",
       "id": 2
+    },
+    {
+      "email": "2.a@gmail.com",
+      "password": "$2a$10$AUmHyqEPzCvfq49W.rUgLORFBUDLCWBcyc5NAlRgX70tYFTzawBlS",
+      "name": "Đỗ Quốc Huy",
+      "role": "admin",
+      "id": 3
     }
   ]
 }
