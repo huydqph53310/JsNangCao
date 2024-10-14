@@ -199,7 +199,7 @@
                         a.classList.add('btn-outline-dark');
                         a.classList.add('mt-auto');
                         a.classList.add('abc');
-                        a.href = '#'
+                        a.href = `/fontend/index.html?add=${productlist.id}`
                         a.innerHTML = "Add to card"
                         div8.append(a)
 
@@ -218,6 +218,40 @@
             }
         }
         Getdata();
+
+        const addById = new URLSearchParams(location.search)
+        const getid = addById.get('add')
+        const AddToCard = (id, quantity = 1) => {
+            const card = localStorage.getItem('card')
+            if (card) {
+                console.log(card)
+                const items = JSON.parse(card)
+                const check = items.filter(item => item.productId == id)
+                if (check.length > 0) {
+                    const newItem = items.map(item => {
+                        if (item.productId == id) {
+                            item.quantity += quantity
+                        }
+                        return item
+                    })
+                    localStorage.setItem('card', JSON.stringify(newItem))
+                } else {
+                    const newItem = {
+                        productId: id,
+                        quantity: quantity
+                    }
+                    localStorage.setItem('card', JSON.stringify([...items, newItem]))
+
+                }
+            } else {
+                const newItem = {
+                    productId: id,
+                    quantity: quantity
+                }
+                localStorage.setItem('card', JSON.stringify([newItem]))
+            }
+        }
+        AddToCard(getid, 1);
     </script>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>

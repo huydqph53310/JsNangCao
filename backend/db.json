@@ -4,10 +4,8 @@
       "name": "Giầy Đỏ",
       "imgae": "/fontend/asset/img/giaytrang.png",
       "price": "300000",
-      "description": "giày trắng mạnh mẽ đẹp đẽ",
+      "description": "giày trắng",
       "brand": "adidas",
-      "new": 1,
-      "buycount": 1,
       "id": 5
     },
     {
@@ -98,6 +96,13 @@
       "name": "Đỗ Quốc Huy",
       "role": "admin",
       "id": 3
+    },
+    {
+      "email": "quanpnph53348@gmail.com",
+      "password": "$2a$10$eYaew2Tf/18ivLkJ2fwqJeDomQRUOO5lUndana5iYMfGPAf7kEWx2",
+      "name": "Phạm Ngọc Quân",
+      "role": "user",
+      "id": 4
     }
   ]
 }

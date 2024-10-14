@@ -82,7 +82,6 @@
                         </tr>
                     </thead>
                     <tbody id="cart-body">
-                        <!-- Các sản phẩm sẽ được thêm vào đây -->
                     </tbody>
                 </table>
             </div>
@@ -104,46 +103,33 @@
             <p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p>
         </div>
     </footer>
-
     <script>
-        const eventReg = document.getElementById('login')
-        const email = document.querySelector('input[name="email"]')
-        const password = document.querySelector('input[name="password"]')
-        eventReg.addEventListener('submit', async (event) => {
-            event.preventDefault(); // ngăn cho trình duyệt chuyển hướng
-            if (validate(email.value, password.value)) {
-                try {
-                    const dataUser = {
-                        email: email.value,
-                        password: password.value,
-                    }
-                    const response = await fetch('http://localhost:3000/login', {
-                        method: 'post',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(dataUser)
-                    })
-                    console.log(response);
+        const card = localStorage.getItem('card');
+        const tbody = document.querySelector('tbody')
+        if (card) {
+            const items = JSON.parse(card);  // Chuyển đổi chuỗi JSON thành mảng
+            console.log(items);
+            items.forEach((list, index) => {
+                const tr = document.createElement('tr')
+                tr.innerHTML = `
+                    <td>${list.productId}</td>
+                    <td>${list.quantity}</td>
+                    <td>${list.quantity}</td>
+                    <td></td>
+                    <td>
+                        <button>Mua</button>
+                        <button>Xóa</button>
+                    </td>
 
-                    if (response.ok) {
-                        const user = await response.json()
-                        const token = user.accessToken
-                        localStorage.setItem('userlogin', token)
-                        alert('đăng nhập thành công')
-                        console.log(user);
-                    }
-                    else alert('Đã sảy ra lỗi')
-                } catch (error) {
-
-                }
-            } else alert(`
-                Kiểm tra lại định dạnh email, tên
-                Không để trống các trường
-                Mật khẩu có ít nhất 6 ký tự
-                Mật khẩu quá dễ
-            `)
-        })
-        const validate = (email, pass) => {
-            return email.trim() && pass.trim() && email.indexOf('@') > 0 && email.indexOf('.') > -1
+                `;
+                tbody.append(tr)
+                console.log(list);
+            });
+        } else {
+            console.log("Giỏ hàng trống");
+        }
+        const GetdataProduct = (id) => {
+            console.log(id)
         }
     </script>
     <!-- Optional JavaScript -->
